@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2017",
+    "noImplicitAny": false, // 禁止隐式any类型
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": false,
+    "allowJs": true, // 是否允许出现js
+    "newLine": "LF",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true, // 装饰器
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

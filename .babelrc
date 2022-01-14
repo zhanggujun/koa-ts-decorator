@@ -1,0 +1,26 @@
+{
+  "presets": [
+    ["@babel/preset-env",{
+      "useBuiltIns": "usage",
+      "targets": {
+        "node": "16.13.2"
+      },
+      "corejs": "3"
+    }],
+    ["@babel/preset-typescript"],
+    // 压缩代码
+    ["minify"]
+  ],
+  "plugins": [
+    // 别名
+    ["module-resolver", {
+      "alias": {
+        "@": "./src"
+      }
+    }],
+    [
+      "@babel/plugin-proposal-decorators",
+      { "legacy": true }
+    ]
+  ]
+}

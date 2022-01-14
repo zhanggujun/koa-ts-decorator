@@ -1,0 +1,46 @@
+{
+  "name": "node-serve",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node dist/bin/www.js",
+    "prd": "pm2 start dist/bin/www.js -i 0",
+    "dev": "npm run clear && ./node_modules/.bin/nodemon -e js,mjs,ts --exec ts-node -r tsconfig-paths/register ./src/bin/www",
+    "build": "npm run clear && babel src --out-dir dist --no-comments --extensions '.ts,.js'",
+    "build:watch": "npm run clear && babel src --watch --out-dir dist --no-comments --extensions '.ts,.js'",
+    "clear": "rimraf ./dist",
+    "clear:module": "rimraf ./node_modules && cnpm install"
+  },
+  "dependencies": {
+    "debug": "^4.3.3",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.1",
+    "koa-router": "^10.1.1",
+    "koa-static": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.8",
+    "@babel/core": "^7.16.7",
+    "@babel/node": "^7.16.8",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-decorators": "^7.16.7",
+    "@babel/preset-env": "^7.16.8",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/koa": "^2.13.4",
+    "@types/koa-bodyparser": "^5.0.1",
+    "@types/koa-router": "^7.4.4",
+    "@types/koa2-cors": "^2.0.2",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "babel-preset-minify": "^0.5.1",
+    "core-js": "^3.20.2",
+    "cross-env": "^7.0.3",
+    "nodemon": "^2.0.15",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.4"
+  }
+}
